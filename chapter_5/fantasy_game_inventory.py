@@ -8,4 +8,4 @@ def displayInventory(inventory):
         item_total += 1
     print('Total number of items: ' + str(item_total))
 
-# displayInventory(stuff)
+displayInventory(stuff)

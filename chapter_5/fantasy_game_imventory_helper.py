@@ -1,4 +1,4 @@
-import fantasy_game_inventory
+from fantasy_game_inventory import displayInventory
 
 dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 inv = {'gold coin': 42, 'rope': 1}
