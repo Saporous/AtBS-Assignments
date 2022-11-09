@@ -1,3 +1,11 @@
+chessBoardA = {'1h': 'bking', '6c': 'wqueen', '2g': 'bbishop', '5h': 'bqueen', '3e': 'wking'} # valid setup
+chessBoardB = {'1h': 'bking', '6c': 'wking', '2g': 'bbishop', '5h': 'bqueen', '3e': 'wking'} # too many kings
+chessBoardC = {'1a': 'wpawn', '2a': 'wpawn', '3a': 'wpawn', '4a': 'wpawn', '5a': 'wpawn', '6a': 'wpawn',
+                 '7a': 'wpawn', '8a' : 'wpawn', '1b': 'wpawn', '1h': 'bking', '3e': 'wking'} # too many pawns
+chessBoardD = {'1a': 'wpawn', '2a': 'wpawn', '3a': 'wpawn', '4a': 'wpawn', '5a': 'wpawn', '6a': 'wpawn', # too many white pieces
+                 '7a': 'wpawn', '8a': 'wqueen', '1c': 'wbishop', '2c': 'wbishop', '3c': 'wqueen',
+                 '4c': 'wknight', '5c': 'wknight', '6c': 'wrook', '7c': 'wrook', '8c': 'wrook',
+                 '1b': 'wpawn', '1h': 'bking', '3e': 'wking'}
 board = {'1h': 'bking', '6c': 'wqueen', '2g': 'bbishop', '5h': 'bqueen', '3e': 'wking'}
 pieceDict = {'pawn', 'knight', 'bishop', 'rook', 'queen', 'king'}
 
