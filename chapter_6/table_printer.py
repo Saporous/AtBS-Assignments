@@ -26,13 +26,15 @@ tableData = [['apples', 'oranges', 'cherries', 'banana'],
              ['dogs', 'cats', 'moose', 'goose']]
 
 def printTable(listOflistOfStrings):
-    longestWord = 0
-    for index, listofstrings in enumerate(listOflistOfStrings):
-        for index2, string in enumerate(listOflistOfStrings[index]):
-            longestWord = len(string) if len(string) > longestWord else longestWord
+    longestWord = []
+    for x in range(len(listOflistOfStrings)):
+        longestWord.append(0)
+        for y in range(len(listOflistOfStrings[0])):
+            stringlen = len(listOflistOfStrings[x][y])
+            longestWord[x] = stringlen if stringlen > longestWord[x] else longestWord[x]
     for y in range(len(listOflistOfStrings[0])):
         for x in range(len(listOflistOfStrings)):
-            print(listOflistOfStrings[x][y].rjust(longestWord), end=' ')
+            print(listOflistOfStrings[x][y].rjust(longestWord[x]+1), end=' ')
         print('')
 
 printTable(tableData)
