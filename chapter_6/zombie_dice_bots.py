@@ -96,8 +96,8 @@ class MoreShotgunsThanBrainsZombie:
         while diceRollResults is not None:
             brains += diceRollResults['brains']
             shotguns += diceRollResults['shotgun']
-            if random.randint(0, 1):
-                zombiedice.roll()
+            if shotguns <= brains:
+                diceRollResults = zombiedice.roll()
             else:
                 break
 
