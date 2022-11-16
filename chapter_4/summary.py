@@ -104,7 +104,7 @@ print('Python\'s GC deletes an unreferenced varaibles to free memory')
 print('copy() and deepcopy() inside the *copy* module can be used to deep copy lists or dicts')
 import copy
 test = ['A','B','C','D']
-print('test = [\'A\',\'B\',\'C\',\'D\'])
+print('test = [\'A\',\'B\',\'C\',\'D\']')
 test2 = test.copy()
 print('test2 = test.copy()')
 test2[0] = 'Z'
