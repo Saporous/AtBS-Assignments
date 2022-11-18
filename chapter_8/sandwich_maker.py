@@ -1,3 +1,6 @@
+# Chapter 8 
+# sandwich_maker.py
+
 import pyinputplus as pyip
 
 prices = {
