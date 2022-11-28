@@ -1,32 +1,41 @@
 #! python3
+
 # mad_libs.py <infile> [<outfile>]
+
 # reads in a text file passed in via commandline argument
 # prompts the user each time the word ADJECTIVE, NOUN, ADVERB, or 
 # VERB appears in the text file.
-from pathlib import Path
-import os
 
-try:
-    print(sys.argv[1])
+# Test command:
+# echo blue chair kicked door | python .\mad_libs.py mad_libs.txt
+
+from pathlib import Path
+import os, sys, re
+
+fn = sys.argv[1]
+checkdir = Path(sys.argv[1])
+if checkdir.exists():
     infile = open(sys.argv[1], 'r')
-    infilepath = Path.cwd() / sys.argv[1]
-except:
-    print('Invalid/no path specified. Program exiting')
+else:
+    print('File does not exist! Exiting')
     exit()
 
-outfiledir = Path.cwd() / (infilepath.stem + '_output' + infilepath.suffix)
-outfile = open(outfiledir, 'a')
-filecontents = infile.read().split()
+if len(sys.argv) == 2:
+    outfiledir = os.getcwd() + '\\' + fn[:fn.find('.')] + '_output' + fn[fn.find('.'):]
+elif len(sys.argv) == 3:
+    outfiledir = Path.cwd() / sys.argv[2]
 
-for iter, word in enumerate(filecontents):
-    if word == 'ADJECTIVE':
-        filecontents[iter] = input('Enter an adjective: ')
-    if word == 'NOUN':
-        filecontents[iter] = input('Enter an noun: ')
-    if word == 'ADVERB':
-        filecontents[iter] = input('Enter an adverb: ')
-    if word == 'VERB':
-        filecontents[iter] = input('Enter an verb: ')
-filecontents = ' '.join(filecontents)
+outfile = open(outfiledir, 'a')
+print(outfiledir)
+# filecontents = infile.read().split
+filecontents = infile.read()
+filecontentssplit = []
+compiledresult = re.compile(r'ADJECTIVE|NOUN|ADVERB|VERB')
+searchresult = compiledresult.findall(filecontents)
+
+for iter, word in enumerate(searchresult):
+    userinput = input('Enter a(n) ' + searchresult[iter] + ': ')
+    filecontents = compiledresult.sub(userinput, filecontents, 1)
+        
 print(filecontents)
 outfile.write(filecontents)
